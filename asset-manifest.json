@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/AiRNET_ToList/static/css/main.ada2ffc0.css",
-    "main.js": "/AiRNET_ToList/static/js/main.b5e4c6dd.js",
+    "main.css": "/AiRNET_ToList/static/css/main.4aac22b0.css",
+    "main.js": "/AiRNET_ToList/static/js/main.2f27dad5.js",
     "index.html": "/AiRNET_ToList/index.html",
-    "main.ada2ffc0.css.map": "/AiRNET_ToList/static/css/main.ada2ffc0.css.map",
-    "main.b5e4c6dd.js.map": "/AiRNET_ToList/static/js/main.b5e4c6dd.js.map"
+    "main.4aac22b0.css.map": "/AiRNET_ToList/static/css/main.4aac22b0.css.map",
+    "main.2f27dad5.js.map": "/AiRNET_ToList/static/js/main.2f27dad5.js.map"
   },
   "entrypoints": [
-    "static/css/main.ada2ffc0.css",
-    "static/js/main.b5e4c6dd.js"
+    "static/css/main.4aac22b0.css",
+    "static/js/main.2f27dad5.js"
   ]
 }
