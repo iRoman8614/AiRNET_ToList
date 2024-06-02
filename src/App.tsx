@@ -1,8 +1,9 @@
 import React from 'react';
-import './App.css';
 import Calendar from "./components/Calendar/Calendar";
-import {CalendarProvider} from "./context";
+import {CalendarProvider} from "./context/context";
 import ModalWindowDay from "./components/ModalWindowDay/ModalWindowDay";
+
+import './App.css';
 
 function App() {
   return (

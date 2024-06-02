@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { useCalendar } from '../../context';
+import { useCalendar } from '../../context/context';
 
 import styles from './Day.module.css';
 

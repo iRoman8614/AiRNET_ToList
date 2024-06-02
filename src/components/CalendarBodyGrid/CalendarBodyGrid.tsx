@@ -1,7 +1,7 @@
 import type {FC} from 'react';
 import {useEffect, useState} from "react";
-import {useCalendar} from "../../context";
-import Day from "../Day/Day";
+import {useCalendar} from "../../context/context";
+import Day from "../DayElement/Day";
 import {fetchMonthDataApi} from '../../API/isDayOff'
 
 import styles from './CalendarBodyGrid.module.css'

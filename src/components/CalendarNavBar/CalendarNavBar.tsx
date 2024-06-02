@@ -1,9 +1,10 @@
 import type {FC} from 'react'
-import monthes from '../../mock/monthes.json'
+import {useCalendar} from "../../context/context";
+import months from '../../mock/monthes.json'
 import years from '../../mock/years.json'
 
 import styles from './CalendarNavBar.module.css'
-import {useCalendar} from "../../context";
+
 
 const CalendarNavBar:FC = () => {
     const { month, year, setMonth, setYear } = useCalendar();
@@ -39,7 +40,7 @@ const CalendarNavBar:FC = () => {
         <div className={styles.root}>
             <button className={styles.monthBtn} onClick={handlePrevMonth}>{"<"}</button>
             <select className={styles.selector} value={month} onChange={handleMonthChange}>
-                {monthes.ru.map((item, index) => {
+                {months.ru.map((item, index) => {
                     return <option key={index} value={index}>{item}</option>;
                 })}
             </select>

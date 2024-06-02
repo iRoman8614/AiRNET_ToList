@@ -89,7 +89,6 @@ export const CalendarProvider: FC<CalendarProviderProps> = ({ children }) => {
                 [formattedDate]: [...existingTasks, task],
             },
         };
-        console.log('Adding task', newTasks);
         setTasks(newTasks);
     };
 

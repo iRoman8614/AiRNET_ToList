@@ -1,6 +1,7 @@
 import type { FC, ChangeEvent } from 'react';
 import {useState} from 'react'
-import { useCalendar } from '../../context';
+import { useCalendar } from '../../context/context';
+
 import styles from './CalendarHeader.module.css';
 
 const CalendarHeader: FC = () => {

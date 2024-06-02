@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useCalendar } from '../../context';
+import { useCalendar } from '../../context/context';
 
 import styles from './ModalWindowDay.module.css';
 
