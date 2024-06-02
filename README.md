@@ -1,46 +1,57 @@
-# Getting Started with Create React App
+# Приложение To-Do Календарь
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание
 
-## Available Scripts
+Этот проект представляет собой список задач в виде календаря, где каждый день представлен как список задач. При клике на день открывается модальное окно со списком задач. В этом окне можно создавать новые задачи, удалять их и помечать как выполненные.
 
-In the project directory, you can run:
+## Техническое задание
 
-### `npm start`
+1. **Приятный внешний вид:** Приложение спроектировано с чистым и удобным интерфейсом.
+2. **Семантическая вёрстка:** Проект использует семантический HTML для улучшения доступности и SEO.
+3. **Адаптивный дизайн:** Приложение полностью адаптивно и под настольные компьютеры и под мобильные устройства.
+4. **Сетка:** Реализована с помощью CSS Grid для расположения календаря, а так же для расположения элементов применен Flexbox.
+5. **Методология БЭМ:** Следует методологии именования классов БЭМ.
+6. **Маркировка праздничных дней:** Использует API isDayOff для маркировки праздничных и выходных дней.
+7. **Просмотр задач по неделям:** Отображает название задачи для каждого дня в месяце.
+8. **TypeScript:** Проект разработан с использованием TypeScript для лучшей проверки типов, поддерживаемости и масштабируемости функционала.
+9. **Система профилей:** Каждый профиль имеет свой собственный список задач, который не отображается в других профилях.
+10. **Принцип инверсии зависимостей:** Внешние HTTP-запросы реализованы с использованием принципа инверсии зависимостей.
+11. **Структура проекта:** Проект имеет ясную и организованную структуру разделения на папки.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Начало работы
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Требования
 
-### `npm test`
+- Node.js
+- npm или yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Установка
 
-### `npm run build`
+1. Клонируйте репозиторий:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   git clone https://github.com/iRoman8614/AiRNET_ToList
+   cd AiRNET_ToList
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Установка зависимостей:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm install
+   # или
+   yarn install
+   ```
 
-### `npm run eject`
+# Запуск приложения
+Чтобы запустить сервер разработки:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   ```bash
+   npm start
+   # или
+   yarn start
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Приложение будет доступно по адресу http://localhost:3000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Вклад
+Если у вас есть предложения по улучшению или вы нашли ошибки, пожалуйста, создайте issue или отправьте pull request.
