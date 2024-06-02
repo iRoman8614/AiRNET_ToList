@@ -1,4 +1,45 @@
 .root {
     display: flex;
     justify-content: space-between;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.monthBtn {
+    border: none;
+    text-align: center;
+    border-radius: 100%;
+    width: 30px !important;
+    font-size: 20px;
+    color: #77A6F7;
+    cursor: pointer;
+}
+
+.selector {
+    border-radius: 15px;
+    border: none;
+    min-width: 60px;
+    max-width: 250px;
+    width: 100%;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 760px) {
+    .root {
+        gap: 10px;
+    }
+    .selector {
+        max-width: 180px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .root {
+        gap: 10px;
+    }
+    .selector {
+        max-width: 100px;
+    }
 }

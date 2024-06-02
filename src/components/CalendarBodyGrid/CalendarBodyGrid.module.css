@@ -1,6 +1,20 @@
 .root {
     display: grid;
-    grid-template-columns: repeat(7, auto);
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     justify-items: end;
     gap: 10px;
+}
+
+.root > * {
+    overflow: hidden;
+    white-space: nowrap;
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 760px) {
+    .root {
+        gap: 3px;
+    }
 }

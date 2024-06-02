@@ -1,0 +1,48 @@
+.root {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.addBtn {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.input {
+    height: 30px;
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.selector {
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 30px;
+    padding-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 760px) {
+    .root {
+        display: block;
+    }
+    .form {
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+}

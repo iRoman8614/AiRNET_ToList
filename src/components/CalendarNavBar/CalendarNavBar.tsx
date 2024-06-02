@@ -37,18 +37,18 @@ const CalendarNavBar:FC = () => {
 
     return(
         <div className={styles.root}>
-            <button onClick={handlePrevMonth}>{"<"}</button>
-            <select value={month} onChange={handleMonthChange}>
+            <button className={styles.monthBtn} onClick={handlePrevMonth}>{"<"}</button>
+            <select className={styles.selector} value={month} onChange={handleMonthChange}>
                 {monthes.ru.map((item, index) => {
                     return <option key={index} value={index}>{item}</option>;
                 })}
             </select>
-            <select value={year} onChange={handleYearChange}>
+            <select className={styles.selector} value={year} onChange={handleYearChange}>
                 {years.years.map((item) => {
                     return <option key={item} value={item}>{item}</option>;
                 })}
             </select>
-            <button onClick={handleNextMonth}>{">"}</button>
+            <button className={styles.monthBtn} onClick={handleNextMonth}>{">"}</button>
         </div>
     )
 }

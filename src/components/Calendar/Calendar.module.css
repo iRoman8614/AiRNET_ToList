@@ -1,4 +1,12 @@
 .root {
     margin: auto;
-    width: 40%;
+    width: 80%;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 760px) {
+    .root {
+        margin: 0;
+        width: 100%;
+    }
 }

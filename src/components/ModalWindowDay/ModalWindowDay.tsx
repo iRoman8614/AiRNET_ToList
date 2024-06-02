@@ -1,23 +1,73 @@
-// Modal.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { useCalendar } from '../../context';
 
-const ModalWindowDay: React.FC = () => {
-    const { isModalOpen, closeModal, showForm } = useCalendar();
+import styles from './ModalWindowDay.module.css';
 
-    if (!isModalOpen) return null;  // Не рендерим модальное окно, если оно не активно
+const ModalWindowDay: React.FC = () => {
+    const { isModalOpen, closeModal, showForm, day, month, year, tasks, addTask, removeTask, toggleTaskStatus, currentProfile } = useCalendar();
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+
+    if (!isModalOpen) return null;
+
+    const date = new Date(year, month, day);
+    const formattedDate = `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
+    const currentTasks = tasks[currentProfile]?.[formattedDate] || [];
+
+    const handleAddTask = () => {
+        if (title.trim()) {
+            addTask(date, { title, desc: description.trim() ? description : ' ', status: "0" });
+            setTitle('');
+            setDescription('');
+        } else {
+            alert("Необходимо ввести название задачи");
+        }
+    };
 
     return (
-        <div className="modal" style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 100, backgroundColor: 'white', padding: '20px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
-            <div className="modal-content">
-                {showForm ? (
-                    <div>Форма для ввода данных</div>
-                ) : (
-                    <div>Недоступная дата</div>
-                )}
-                <button onClick={closeModal} style={{ marginTop: '20px' }}>Закрыть</button>
-            </div>
-            <div className="modal-overlay" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0, 0, 0, 0.5)' }} onClick={closeModal}></div>
+        <div className={styles.root}>
+            <h2 className={styles.date}>{formattedDate}</h2>
+            {currentTasks.length > 0 ?
+                <div>
+                    <h3 className={styles.list}>Задачи:</h3>
+                    <div className={styles.task}>
+                        {currentTasks.map((task, index) => (
+                            <div key={index}>
+                                <h2 style={{ textDecoration: task.status === "1" ? 'line-through' : 'none' }}>{index + 1}. {task.title}</h2>
+                                <p className={styles.description}>{task.desc}</p>
+                                <div className={styles.buttonSet}>
+                                    <button className={styles.statusBtn} onClick={() => toggleTaskStatus(date, index)}>
+                                        {task.status === "1" ? "Снять выполнение" : "Пометить как выполненное"}
+                                    </button>
+                                    <button className={styles.deleteBtn} onClick={() => removeTask(date, index)}>Удалить</button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                :
+                <h3 className={styles.list}>Задач нет</h3>
+            }
+            {showForm && (
+                <div className={styles.form}>
+                    <h3>Добавить новую задачу</h3>
+                    <input
+                        className={styles.titleInput}
+                        type="text"
+                        placeholder="Название задачи"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    />
+                    <textarea
+                        className={styles.descInput}
+                        placeholder="Описание"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                    ></textarea>
+                    <button className={styles.addBtn} onClick={handleAddTask}>Добавить задачу</button>
+                </div>
+            )}
+            <button onClick={closeModal} className={styles.closeBtn}>Закрыть</button>
         </div>
     );
 };

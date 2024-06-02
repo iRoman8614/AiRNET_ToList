@@ -1,0 +1,39 @@
+.root {
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    text-align: right;
+    cursor: pointer;
+    background-color: #D3E3FC;
+    font-size: 20px;
+}
+
+.off {
+    color: #ff2f2f;
+}
+
+.offPast {
+    color: #ff2f2f;
+    opacity: 50%;
+}
+
+.work {
+    color: #022140;
+}
+
+.workPast {
+    color: #022140;
+    opacity: 50%;
+}
+
+.taskList {
+    text-align: left;
+}
+
+.task {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #00887A;
+}

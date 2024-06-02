@@ -7,8 +7,10 @@ import ModalWindowDay from "./components/ModalWindowDay/ModalWindowDay";
 function App() {
   return (
       <CalendarProvider>
-          <Calendar />
-          <ModalWindowDay />
+          <div className='app'>
+              <Calendar />
+              <ModalWindowDay />
+          </div>
       </CalendarProvider>
   );
 }

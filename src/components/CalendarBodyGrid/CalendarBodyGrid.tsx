@@ -1,11 +1,18 @@
 import type {FC} from 'react';
-
-import styles from './CalendarBodyGrid.module.css'
+import {useEffect, useState} from "react";
 import {useCalendar} from "../../context";
 import Day from "../Day/Day";
+import {fetchMonthDataApi} from '../../API/isDayOff'
+
+import styles from './CalendarBodyGrid.module.css'
 
 const CalendarBodyGrid:FC = () => {
     const { month, year } = useCalendar();
+    const [daysStatus, setDaysStatus] = useState<number[]>([]);
+
+    useEffect(() => {
+        fetchMonthDataApi(year, month).then(setDaysStatus);
+    }, [year, month]);
 
     const getDaysInMonth = () => new Date(year, month + 1, 0).getDate();
     const getFirstDayOfMonth = () => {
@@ -15,9 +22,7 @@ const CalendarBodyGrid:FC = () => {
 
     const daysInMonth = getDaysInMonth();
     const firstDay = getFirstDayOfMonth();
-
     const offsetDays = Array(firstDay).fill(null);
-
     const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 
     return(
@@ -25,10 +30,8 @@ const CalendarBodyGrid:FC = () => {
             {offsetDays.map((_, index) => (
                 <div key={`offset-${index}`} className={styles.dayEmpty}></div>
             ))}
-            {days.map(day => (
-                <div key={day} className={styles.day}>
-                    <Day day={day} />
-                </div>
+            {days.map((day, index) => (
+                <Day day={day} isDayOff={daysStatus[index] === 1} />
             ))}
         </div>
     )
