@@ -37,7 +37,7 @@ const Day: FC<DayProps> = ({ day, isDayOff }) => {
             {currentTasks.length > 0 && (
                 <div className={styles.taskList}>
                     {currentTasks.map((task, index) => (
-                        <div className={styles.task} key={index}>{index + 1}.{task.title}</div>
+                        <div className={styles.task} key={index}>{task.title}</div>
                     ))}
                 </div>
             )}

@@ -37,3 +37,12 @@
     overflow: hidden;
     color: #00887A;
 }
+
+@media screen and (max-width: 760px) {
+    .root {
+        padding: 2px;
+    }
+    .taskList {
+        font-size: 13px;
+    }
+}
